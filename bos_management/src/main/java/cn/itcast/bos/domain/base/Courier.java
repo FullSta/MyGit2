@@ -1,5 +1,7 @@
 package cn.itcast.bos.domain.base;
 
+import org.apache.struts2.json.annotations.JSON;
+
 import java.util.HashSet;
 import java.util.Set;
 
@@ -135,6 +137,7 @@ public class Courier {
 		this.vehicleNum = vehicleNum;
 	}
 
+	@JSON(serialize = false)
 	public Set<FixedArea> getFixedAreas() {
 		return fixedAreas;
 	}

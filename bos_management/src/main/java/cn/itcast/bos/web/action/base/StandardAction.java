@@ -1,6 +1,7 @@
 package cn.itcast.bos.web.action.base;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.apache.struts2.convention.annotation.Action;
@@ -44,7 +45,10 @@ public class StandardAction extends ActionSupport implements
 	@Action(value = "standard_save", results = { @Result(name = "success", type = "redirect", location = "./pages/base/standard.html") })
 	public String save() {
 		System.out.println("添加收派标准....");
-		standardService.save(standard);
+		System.out.println(standard);
+		for(int i=1;i<7;i++){
+			standardService.save(standard);
+		}
 		return SUCCESS;
 	}
 
@@ -63,6 +67,7 @@ public class StandardAction extends ActionSupport implements
 	// 分页列表查询
 	@Action(value = "standard_pageQuery", results = { @Result(name = "success", type = "json") })
 	public String pageQuery() {
+		System.out.println("正在分页查询标准...");
 		// 调用业务层 ，查询数据结果
 		Pageable pageable = new PageRequest(page - 1, rows);
 		Page<Standard> pageData = standardService.findPageData(pageable);
@@ -78,4 +83,11 @@ public class StandardAction extends ActionSupport implements
 		return SUCCESS;
 	}
 
+	// 为了显示在快递员的下拉列表中，需要有一个方法查询出所有的收派标准
+	@Action(value="standard_findAll",results={@Result(name="success",type = "json")})
+	public String findAll(){
+		List<Standard> standards = standardService.findAll();
+		ActionContext.getContext().getValueStack().push(standards);
+		return SUCCESS;
+	}
 }

@@ -30,5 +30,11 @@ public class StandardServiceImpl implements StandardService {
 		return standardRepository.findAll(pageable);
 	}
 
+	@Override
+	public List<Standard> findAll() {
+		List<Standard> standards = standardRepository.findAll();
+		return standards;
+	}
+
 
 }

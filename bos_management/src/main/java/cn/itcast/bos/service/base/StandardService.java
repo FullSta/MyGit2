@@ -18,4 +18,5 @@ public interface StandardService {
 	// 分页查询 
 	public Page<Standard> findPageData(Pageable pageable);
 
+    List<Standard> findAll();
 }
