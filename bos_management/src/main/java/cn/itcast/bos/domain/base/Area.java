@@ -1,5 +1,7 @@
 package cn.itcast.bos.domain.base;
 
+import org.apache.struts2.json.annotations.JSON;
+
 import java.util.HashSet;
 import java.util.Set;
 
@@ -96,6 +98,7 @@ public class Area {
 		return subareas;
 	}
 
+	@JSON(serialize = false)
 	public void setSubareas(Set<SubArea> subareas) {
 		this.subareas = subareas;
 	}

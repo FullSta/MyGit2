@@ -13,10 +13,19 @@ import org.apache.poi.ss.usermodel.Row;
 import org.apache.struts2.convention.annotation.Action;
 import org.apache.struts2.convention.annotation.Namespace;
 import org.apache.struts2.convention.annotation.ParentPackage;
+import org.apache.struts2.convention.annotation.Result;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Controller;
 
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Predicate;
+import javax.persistence.criteria.Root;
 import java.io.File;
 import java.io.FileInputStream;
 import java.util.ArrayList;
@@ -26,14 +35,8 @@ import java.util.List;
 @Namespace("/")
 @Scope("prototype")
 @Controller
-public class AreaAction extends ActionSupport implements ModelDriven<Area> {
+public class AreaAction extends BaseAction<Area> {
 
-    private Area area;
-
-    @Override
-    public Area getModel() {
-        return area;
-    }
     // 注入业务层对象
     @Autowired
     private AreaService areaService;
@@ -47,7 +50,7 @@ public class AreaAction extends ActionSupport implements ModelDriven<Area> {
     // 接收前段传递过来的文件,实现批量导入区域
     @Action(value = "area_batchImport")
     public String batchImport() throws Exception {
-        // todo
+        System.out.println(file.getName());
         List<Area> areas = new ArrayList<Area>();
         // 编写解析代码逻辑
         // 基于.xls格式解析HSSF
@@ -56,15 +59,15 @@ public class AreaAction extends ActionSupport implements ModelDriven<Area> {
         // 2.读取一个sheet
         HSSFSheet sheet = hssfWorkbook.getSheetAt(0);
         // 2.读取sheet的每一行
-        for(Row row:sheet){
+        for (Row row : sheet) {
             // 一行数据 对应 一个区域的对象
-            if(row.getRowNum() == 0){
+            if (row.getRowNum() == 0) {
                 // 第一行,跳过
                 continue;
             }
             // 跳过空行
-            if(row.getCell(0) == null
-                    || StringUtils.isBlank(row.getCell(0).getStringCellValue())){
+            if (row.getCell(0) == null
+                    || StringUtils.isBlank(row.getCell(0).getStringCellValue())) {
                 continue;
             }
 
@@ -79,19 +82,19 @@ public class AreaAction extends ActionSupport implements ModelDriven<Area> {
             String province = area.getProvince();
             String city = area.getCity();
             String district = area.getDistrict();
-            province = province.substring(0,province.length()-1);
-            city = city.substring(0,city.length()-1);
-            district = district.substring(0,district.length()-1);
+            province = province.substring(0, province.length() - 1);
+            city = city.substring(0, city.length() - 1);
+            district = district.substring(0, district.length() - 1);
             // 简码
-            String[] headArray = PinYin4jUtils.getHeadByString(province+city+district);
+            String[] headArray = PinYin4jUtils.getHeadByString(province + city + district);
             StringBuffer buffer = new StringBuffer();
-            for (String headStr:headArray) {
+            for (String headStr : headArray) {
                 buffer.append(headStr);
             }
             String shortCode = buffer.toString();
             area.setShortcode(shortCode);
             // 城市编码
-            String cityCode = PinYin4jUtils.hanziToPinyin(city,"");
+            String cityCode = PinYin4jUtils.hanziToPinyin(city, "");
             area.setCitycode(cityCode);
             areas.add(area);
 
@@ -100,6 +103,42 @@ public class AreaAction extends ActionSupport implements ModelDriven<Area> {
         areaService.saveBatch(areas);
 
         return NONE;
+    }
+
+    // 分页查询
+    @Action(value = "area_pageQuery", results = {@Result(name = "success", type = "json")})
+    public String pageQuery() {
+        // 构造分页查询对象
+        Pageable pageable = new PageRequest(page - 1, rows);
+        // 构造条件查询条件
+        Specification<Area> specification = new Specification<Area>() {
+            @Override
+            public Predicate toPredicate(Root<Area> root, CriteriaQuery<?> query, CriteriaBuilder cb) {
+                List<Predicate> list = new ArrayList<Predicate>();
+                if (StringUtils.isNotBlank(model.getProvince())){
+                    Predicate p1 = cb.like(root.get("province")
+                            .as(String.class),"%"+model.getProvince()+"%");
+                    list.add(p1);
+                }
+                if (StringUtils.isNotBlank(model.getCity())){
+                    Predicate p2 = cb.like(root.get("city")
+                            .as(String.class),"%"+model.getCity()+"%");
+                    list.add(p2);
+                }
+                if (StringUtils.isNotBlank(model.getDistrict())){
+                    Predicate p3 = cb.like(root.get("district")
+                            .as(String.class),"%"+model.getDistrict()+"%");
+                    list.add(p3);
+                }
+
+                return cb.and(list.toArray(new Predicate[0]));
+            }
+        };
+        // 调用业务层完成查询
+        Page<Area> pageData = areaService.findPageData(specification,pageable);
+        // 压入值栈,,调用baseAction定义的方法
+        pushPageDataToValueStack(pageData);
+        return SUCCESS;
     }
 
 }

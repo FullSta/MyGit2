@@ -142,10 +142,12 @@
 					onSelect : function(){
 					    // 选中文件之后,关闭自动提交
 						this.autoSubmit = false;
-						// 判断文件啊格式,以.xls;.xlsx结尾的才可以
+                        // 判断文件啊格式,以.xls;.xlsx结尾的才可以
+                        var filename = this.filename();
 						var regex = /^.*\.(xls|xlsx)$/;
 						if(regex.test(filename)){
 						    // 符合条件
+							alert(filename);
 							this.submit();
 						}else{
 						    $.messager.alert("警告","你特么上传的文件后缀名都不对!","warning");

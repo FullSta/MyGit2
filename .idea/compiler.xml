@@ -7,11 +7,15 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="bos_management" />
+        <module name="crm_domain" />
+        <module name="crm_management" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="bos_management" target="1.7" />
       <module name="common_parent" target="1.5" />
+      <module name="crm_domain" target="1.7" />
+      <module name="crm_management" target="1.7" />
     </bytecodeTargetLevel>
   </component>
 </project>
