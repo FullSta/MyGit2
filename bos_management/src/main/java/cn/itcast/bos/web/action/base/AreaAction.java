@@ -4,8 +4,6 @@ import cn.itcast.bos.domain.base.Area;
 import cn.itcast.bos.service.base.AreaService;
 import cn.itcast.bos.utils.PinYin4jUtils;
 import cn.itcast.bos.web.action.common.BaseAction;
-import com.opensymphony.xwork2.ActionSupport;
-import com.opensymphony.xwork2.ModelDriven;
 import org.apache.commons.lang.StringUtils;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
@@ -50,7 +48,7 @@ public class AreaAction extends BaseAction<Area> {
     // 接收前段传递过来的文件,实现批量导入区域
     @Action(value = "area_batchImport")
     public String batchImport() throws Exception {
-        System.out.println(file.getName());
+        // System.out.println(file.getName());
         List<Area> areas = new ArrayList<Area>();
         // 编写解析代码逻辑
         // 基于.xls格式解析HSSF

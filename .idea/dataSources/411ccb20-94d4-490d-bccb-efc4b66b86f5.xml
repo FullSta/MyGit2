@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="crm">
+  <database-model serializer="dbm" rdbms="ORACLE" format-version="4.7">
+    <root id="1"/>
+    <schema id="2" parent="1" name="PUBLIC">
+      <ObjectId>1</ObjectId>
+    </schema>
+    <schema id="3" parent="1" name="SYS">
+      <ObjectId>0</ObjectId>
+    </schema>
+    <schema id="4" parent="1" name="SYSTEM">
+      <ObjectId>5</ObjectId>
+    </schema>
+    <schema id="5" parent="1" name="OUTLN">
+      <ObjectId>11</ObjectId>
+    </schema>
+    <schema id="6" parent="1" name="DIP">
+      <ObjectId>19</ObjectId>
+    </schema>
+    <schema id="7" parent="1" name="TSMSYS">
+      <ObjectId>21</ObjectId>
+    </schema>
+    <schema id="8" parent="1" name="DBSNMP">
+      <ObjectId>24</ObjectId>
+    </schema>
+    <schema id="9" parent="1" name="WMSYS">
+      <ObjectId>25</ObjectId>
+    </schema>
+    <schema id="10" parent="1" name="EXFSYS">
+      <ObjectId>34</ObjectId>
+    </schema>
+    <schema id="11" parent="1" name="DMSYS">
+      <ObjectId>35</ObjectId>
+    </schema>
+    <schema id="12" parent="1" name="CTXSYS">
+      <ObjectId>36</ObjectId>
+    </schema>
+    <schema id="13" parent="1" name="XDB">
+      <ObjectId>38</ObjectId>
+    </schema>
+    <schema id="14" parent="1" name="ANONYMOUS">
+      <ObjectId>39</ObjectId>
+    </schema>
+    <schema id="15" parent="1" name="ORDSYS">
+      <ObjectId>43</ObjectId>
+    </schema>
+    <schema id="16" parent="1" name="ORDPLUGINS">
+      <ObjectId>44</ObjectId>
+    </schema>
+    <schema id="17" parent="1" name="SI_INFORMTN_SCHEMA">
+      <ObjectId>45</ObjectId>
+    </schema>
+    <schema id="18" parent="1" name="MDSYS">
+      <ObjectId>46</ObjectId>
+    </schema>
+    <schema id="19" parent="1" name="OLAPSYS">
+      <ObjectId>47</ObjectId>
+    </schema>
+    <schema id="20" parent="1" name="MDDATA">
+      <ObjectId>50</ObjectId>
+    </schema>
+    <schema id="21" parent="1" name="SYSMAN">
+      <ObjectId>51</ObjectId>
+    </schema>
+    <schema id="22" parent="1" name="MGMT_VIEW">
+      <ObjectId>53</ObjectId>
+    </schema>
+    <schema id="23" parent="1" name="SCOTT">
+      <ObjectId>54</ObjectId>
+    </schema>
+    <schema id="24" parent="1" name="HR">
+      <ObjectId>55</ObjectId>
+    </schema>
+    <schema id="25" parent="1" name="OE">
+      <ObjectId>56</ObjectId>
+    </schema>
+    <schema id="26" parent="1" name="IX">
+      <ObjectId>57</ObjectId>
+    </schema>
+    <schema id="27" parent="1" name="SH">
+      <ObjectId>58</ObjectId>
+    </schema>
+    <schema id="28" parent="1" name="PM">
+      <ObjectId>59</ObjectId>
+    </schema>
+    <schema id="29" parent="1" name="BI">
+      <ObjectId>60</ObjectId>
+    </schema>
+    <schema id="30" parent="1" name="WATERUSER">
+      <ObjectId>61</ObjectId>
+    </schema>
+    <schema id="31" parent="1" name="WATERUSER2">
+      <ObjectId>62</ObjectId>
+    </schema>
+    <schema id="32" parent="1" name="BOS">
+      <ObjectId>63</ObjectId>
+    </schema>
+    <schema id="33" parent="1" name="CRM">
+      <ObjectId>69</ObjectId>
+      <IntrospectionTimestamp>2018-04-10.02:25:42</IntrospectionTimestamp>
+      <CreatedTimestamp>2018-04-10.02:23:54</CreatedTimestamp>
+      <ModifiedTimestamp>2018-04-10.02:23:54</ModifiedTimestamp>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <sequence id="34" parent="33" name="HIBERNATE_SEQUENCE">
+      <ObjectId>52933</ObjectId>
+      <CreatedTimestamp>2018-04-10.02:23:54</CreatedTimestamp>
+      <ModifiedTimestamp>2018-04-10.02:23:54</ModifiedTimestamp>
+      <SequenceIdentity>1</SequenceIdentity>
+    </sequence>
+    <table id="35" parent="33" name="T_CUSTOMER">
+      <ObjectId>52931</ObjectId>
+      <CreatedTimestamp>2018-04-10.02:23:54</CreatedTimestamp>
+      <ModifiedTimestamp>2018-04-10.02:23:54</ModifiedTimestamp>
+      <TemporaryPreserve>1</TemporaryPreserve>
+    </table>
+    <column id="36" parent="35" name="C_ID">
+      <Position>1</Position>
+      <DataType>NUMBER(10 digit)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="37" parent="35" name="C_ADDRESS">
+      <Position>2</Position>
+      <DataType>VARCHAR2(255 char)|0us</DataType>
+    </column>
+    <column id="38" parent="35" name="C_BRITHDAY">
+      <Position>3</Position>
+      <DataType>DATE|0s</DataType>
+    </column>
+    <column id="39" parent="35" name="C_COMPANY">
+      <Position>4</Position>
+      <DataType>VARCHAR2(255 char)|0us</DataType>
+    </column>
+    <column id="40" parent="35" name="C_DEPARTMENT">
+      <Position>5</Position>
+      <DataType>VARCHAR2(255 char)|0us</DataType>
+    </column>
+    <column id="41" parent="35" name="C_EMAIL">
+      <Position>6</Position>
+      <DataType>VARCHAR2(255 char)|0us</DataType>
+    </column>
+    <column id="42" parent="35" name="C_FIXED_AREA_ID">
+      <Position>7</Position>
+      <DataType>VARCHAR2(255 char)|0us</DataType>
+    </column>
+    <column id="43" parent="35" name="C_MOBILEPHONE">
+      <Position>8</Position>
+      <DataType>VARCHAR2(255 char)|0us</DataType>
+    </column>
+    <column id="44" parent="35" name="C_PASSWORD">
+      <Position>9</Position>
+      <DataType>VARCHAR2(255 char)|0us</DataType>
+    </column>
+    <column id="45" parent="35" name="C_POSITION">
+      <Position>10</Position>
+      <DataType>VARCHAR2(255 char)|0us</DataType>
+    </column>
+    <column id="46" parent="35" name="C_SEX">
+      <Position>11</Position>
+      <DataType>NUMBER(10 digit)|0s</DataType>
+    </column>
+    <column id="47" parent="35" name="C_TELEPHONE">
+      <Position>12</Position>
+      <DataType>VARCHAR2(255 char)|0us</DataType>
+    </column>
+    <column id="48" parent="35" name="C_TYPE">
+      <Position>13</Position>
+      <DataType>NUMBER(10 digit)|0s</DataType>
+    </column>
+    <column id="49" parent="35" name="C_USERNAME">
+      <Position>14</Position>
+      <DataType>VARCHAR2(255 char)|0us</DataType>
+    </column>
+    <index id="50" parent="35" name="SYS_C005513">
+      <ObjectId>52932</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <CreatedTimestamp>2018-04-10.02:23:54</CreatedTimestamp>
+      <ModifiedTimestamp>2018-04-10.02:23:54</ModifiedTimestamp>
+      <TablespaceName>USERS</TablespaceName>
+      <ColNames>C_ID</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="51" parent="35" name="SYS_C005513">
+      <NameSurrogate>1</NameSurrogate>
+      <ModifiedTimestamp>2018-04-10.02:23:54</ModifiedTimestamp>
+      <ColNames>C_ID</ColNames>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <UnderlyingIndexName>SYS_C005513</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>

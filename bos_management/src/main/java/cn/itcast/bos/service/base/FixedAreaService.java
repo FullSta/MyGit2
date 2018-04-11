@@ -8,7 +8,11 @@ import org.springframework.stereotype.Service;
 
 @Service
 public interface FixedAreaService {
-    public Page<FixedArea> findPageData(Specification<FixedArea> specification, Pageable pageable);
+    Page<FixedArea> findPageData(Specification<FixedArea> specification, Pageable pageable);
 
-    public void save(FixedArea fixedArea);
+    void save(FixedArea fixedArea);
+
+    void associationCourierToFixedArea(FixedArea model, Integer courierId, Integer takeTimeId);
+
+    FixedArea findOne(String fixedAreaId);
 }

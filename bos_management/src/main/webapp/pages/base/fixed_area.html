@@ -57,21 +57,24 @@
 		$('#searchWindow').window("open");
 	}
 
+	//关联客户
 	function doAssociations() {
-		//获取一行数据
+		//获取一行数据,,判断用户是否只选择了一个定区
 		var rows = $("#grid").datagrid("getSelections");
 		if (rows.length == 1) {
 			//开启进度条
-			$.messager.progress();
+			$.messager.progress({
+                interval :500 // 每0.5秒加载10%, 5秒加载完
+			});
 			//获取定区ID 
 			var fixedAreaId = rows[0].id;
 
 			$("#customerFixedAreaId").val(fixedAreaId);
+			//清空上次加载数据
+			// $("#noassociationSelect").empty();
 			//加载未关联 定区 信息
-			$.post("../../fixedArea_noAssociationCustomers.action", function(
+			$.post("../../fixedArea_findNoAssociationCustomers.action", function(
 					data) {
-				//清空上次加载数据
-				$("#noassociationSelect").empty();
 				$(data).each(
 						function() {
 							var option = $("<option value="+this.id+">"
@@ -85,12 +88,12 @@
 
 			})
 
+			//清空上次加载数据
+			//$("#associationSelect").empty();
 			//加载关联当前定区信息
-			$.post("../../fixedArea_hasAssociationCustomers.action", {
+			$.post("../../fixedArea_findHasAssociationFixedAreaCustomers.action", {
 				"id" : fixedAreaId
 			}, function(data) {
-				//清空上次加载数据
-				$("#associationSelect").empty();
 				$(data).each(
 						function() {
 							var option = $("<option value="+this.id+">"
@@ -101,7 +104,7 @@
 			})
 
 		} else {
-			$.messager.alert("警告", "请选择一行数据", "warning");
+			$.messager.alert("警告", "用户能且只能选择一个定区关联", "warning");
 		}
 
 	}
@@ -217,6 +220,14 @@
 			closed : true,
 			height : 400,
 			resizable : false
+		});
+
+		// 吧清空列表的操作集中在这里
+		$('#customerWindow').window({
+			onClose :function(){
+                $("#noassociationSelect").empty();
+                $("#associationSelect").empty();
+			}
 		});
 
 		// 查询定区
@@ -342,7 +353,7 @@
 			border : true,
 			rownumbers : true,
 			striped : true,
-			url : "../../data/association_customer.json",
+			url : "../../fixedArea_pageQuery",
 			columns : [ [ {
 				field : 'id',
 				title : '客户编号',
@@ -472,16 +483,18 @@
 		style="top: 20px; left: 200px; width: 700px; height: 300px;">
 		<div style="overflow: auto; padding: 5px;" border="false">
 			<form id="customerForm"
-				action="../../fixedArea_associationCsutomerToFixedArea.action"
+				action="../../fixedArea_associationCustomersToFixedArea.action"
 				method="post">
 				<table class="table-edit" width="80%" align="center">
 					<tr class="title">
 						<td colspan="3">关联客户</td>
 					</tr>
 					<tr>
+						<!--存放定区编号-->
 						<td><input type="hidden" name="id" id="customerFixedAreaId" />
 							<select id="noassociationSelect" multiple="multiple" size="10"></select>
 						</td>
+
 						<td><input type="button" value="》》" id="toRight"> <br />
 							<input type="button" value="《《" id="toLeft"></td>
 						<td><select id="associationSelect" name="customerIds"

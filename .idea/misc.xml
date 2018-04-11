@@ -3,6 +3,8 @@
   <component name="FrameworkDetectionExcludesConfiguration">
     <file type="web" url="file://$PROJECT_DIR$/bos_management" />
     <file type="web" url="file://$PROJECT_DIR$/crm_management" />
+    <file type="web" url="file://$PROJECT_DIR$/cxf_rs_spring" />
+    <file type="web" url="file://$PROJECT_DIR$/cxf_ws_spring" />
   </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">
@@ -11,10 +13,12 @@
         <option value="$PROJECT_DIR$/bos_management/pom.xml" />
         <option value="$PROJECT_DIR$/crm_domain/pom.xml" />
         <option value="$PROJECT_DIR$/crm_management/pom.xml" />
+        <option value="$PROJECT_DIR$/cxf_rs_spring/pom.xml" />
+        <option value="$PROJECT_DIR$/cxf_ws_spring/pom.xml" />
       </list>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_9" default="false" project-jdk-name="1.8 (1)" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_9" default="false" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
 </project>

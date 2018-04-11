@@ -22,7 +22,7 @@ public class SubArea {
 	@Column(name = "C_ENDNUM")
 	private String endNum; // 终止号
 	@Column(name = "C_SINGLE")
-	private Character single; // 单双号
+	private String single; // 单双号
 	@Column(name = "C_KEY_WORDS")
 	private String keyWords; // 关键字
 	@Column(name = "C_ASSIST_KEY_WORDS")
@@ -43,11 +43,11 @@ public class SubArea {
 		this.id = id;
 	}
 
-	public Character getSingle() {
+	public String getSingle() {
 		return single;
 	}
 
-	public void setSingle(Character single) {
+	public void setSingle(String single) {
 		this.single = single;
 	}
 

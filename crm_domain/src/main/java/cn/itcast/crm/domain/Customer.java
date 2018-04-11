@@ -9,6 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  * @description:客户信息表
@@ -16,6 +17,7 @@ import javax.persistence.TemporalType;
  */
 @Entity
 @Table(name = "T_CUSTOMER")
+@XmlRootElement(name="customer")
 public class Customer {
 	@Id
 	@GeneratedValue()

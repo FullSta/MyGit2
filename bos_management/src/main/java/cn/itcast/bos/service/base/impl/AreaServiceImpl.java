@@ -2,6 +2,7 @@ package cn.itcast.bos.service.base.impl;
 
 import cn.itcast.bos.dao.base.AreaRepository;
 import cn.itcast.bos.domain.base.Area;
+import cn.itcast.bos.domain.base.FixedArea;
 import cn.itcast.bos.service.base.AreaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -27,4 +28,11 @@ public class AreaServiceImpl implements AreaService {
 //        return areaRepository.findAll(pageable);
         return areaRepository.findAll(specification,pageable);
     }
+
+    @Override
+    public Area findOne(String areaId) {
+        return areaRepository.findOne(areaId);
+    }
+
+
 }

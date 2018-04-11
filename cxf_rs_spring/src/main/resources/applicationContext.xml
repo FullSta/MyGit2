@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jaxrs="http://cxf.apache.org/jaxrs"
+	xsi:schemaLocation="
+	http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://cxf.apache.org/jaxrs http://cxf.apache.org/schemas/jaxrs.xsd">
+
+	<!-- 
+		address 发布服务地址 
+		servicesBeans 服务实现类 
+	 -->
+	<jaxrs:server id="customerService" address="/customerService" >
+		<jaxrs:serviceBeans>
+			<bean class="cn.itcast.crm.service.CustomerServiceImpl" />
+		</jaxrs:serviceBeans>
+	</jaxrs:server>
+
+<!--	<jaxrs:server id="userService" address="/userService" >
+		<jaxrs:serviceBeans>
+			<bean class="cn.itcast.cxf.service.UserServiceImpl" />
+		</jaxrs:serviceBeans>
+		<jaxrs:inInterceptors>
+			<bean class="org.apache.cxf.interceptor.LoggingInInterceptor" />
+		</jaxrs:inInterceptors>
+		<jaxrs:outInterceptors>
+			<bean class="org.apache.cxf.interceptor.LoggingOutInterceptor" />
+		</jaxrs:outInterceptors>
+	</jaxrs:server>-->
+	
+</beans>

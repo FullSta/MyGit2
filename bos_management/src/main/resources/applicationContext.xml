@@ -38,7 +38,7 @@
 			<bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
 				<property name="generateDdl" value="true" />
 				<property name="database" value="ORACLE" />
-				<!--设置数据库为mysql方言-->
+				<!--设置数据库为oracle方言-->
 				<property name="databasePlatform"
 						  value="org.hibernate.dialect.Oracle10gDialect" />
 				<property name="showSql" value="true" />

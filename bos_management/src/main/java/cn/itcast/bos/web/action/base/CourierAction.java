@@ -136,7 +136,12 @@ public class CourierAction extends ActionSupport implements ModelDriven<Courier>
         return SUCCESS;
     }
 
-
-
+    // 查询没有分配到分区的快递员
+    @Action(value = "courier_noassociation",results = {@Result(name="success",type = "json")})
+    public String findnoassociation(){
+        List<Courier> list = courierService.findnoassociation();
+        ActionContext.getContext().getValueStack().push(list);
+        return SUCCESS;
+    }
 
 }

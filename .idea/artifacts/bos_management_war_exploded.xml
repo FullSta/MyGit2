@@ -7,6 +7,9 @@
           <element id="module-output" name="bos_management" />
         </element>
         <element id="directory" name="lib">
+          <element id="archive" name="crm_domain-0.0.1-SNAPSHOT.jar">
+            <element id="module-output" name="crm_domain" />
+          </element>
           <element id="library" level="project" name="Maven: org.apache.shiro:shiro-all:1.2.2" />
           <element id="library" level="project" name="Maven: org.apache.shiro:shiro-guice:1.2.2" />
           <element id="library" level="project" name="Maven: org.apache.shiro:shiro-core:1.2.2" />

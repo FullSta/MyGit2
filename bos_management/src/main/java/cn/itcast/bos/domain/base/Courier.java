@@ -21,152 +21,156 @@ import javax.persistence.Table;
 @Table(name = "T_COURIER")
 public class Courier {
 
-	@Id
-	@GeneratedValue
-	@Column(name = "C_ID")
-	private Integer id; // 主键
-	@Column(name = "C_COURIER_NUM", unique = true)
-	private String courierNum; // 快递员工号
-	@Column(name = "C_NAME")
-	private String name; // 快递员姓名
-	@Column(name = "C_TELEPHONE")
-	private String telephone; // 快递员联系电话
-	@Column(name = "C_PDA")
-	private String pda; // PDA号
-	@Column(name = "C_DELTAG")
-	private Character deltag; // 作废标志 1 为标记作废
-	@Column(name = "C_CHECK_PWD")
-	private String checkPwd; // 查台密码
-	@Column(name = "C_TYPE")
-	private String type; // 取件员类型
-	@Column(name = "C_COMPANY")
-	private String company; // 单位
-	@Column(name = "C_VEHICLE_TYPE")
-	private String vehicleType; // 车辆类型
-	@Column(name = "C_VEHICLE_NUM")
-	private String vehicleNum; // 车牌号
+    @Id
+    @GeneratedValue
+    @Column(name = "C_ID")
+    private Integer id; // 主键
+    @Column(name = "C_COURIER_NUM", unique = true)
+    private String courierNum; // 快递员工号
+    @Column(name = "C_NAME")
+    private String name; // 快递员姓名
+    @Column(name = "C_TELEPHONE")
+    private String telephone; // 快递员联系电话
+    @Column(name = "C_PDA")
+    private String pda; // PDA号
+    @Column(name = "C_DELTAG")
+    private Character deltag; // 作废标志 1 为标记作废
+    @Column(name = "C_CHECK_PWD")
+    private String checkPwd; // 查台密码
+    @Column(name = "C_TYPE")
+    private String type; // 取件员类型
+    @Column(name = "C_COMPANY")
+    private String company; // 单位
+    @Column(name = "C_VEHICLE_TYPE")
+    private String vehicleType; // 车辆类型
+    @Column(name = "C_VEHICLE_NUM")
+    private String vehicleNum; // 车牌号
 
-	@ManyToOne
-	@JoinColumn(name = "C_STANDARD_ID")
-	private Standard standard;
+    @ManyToOne
+    @JoinColumn(name = "C_STANDARD_ID")
+    private Standard standard;
 
-	@ManyToOne
-	@JoinColumn(name = "C_TAKETIME_ID")
-	private TakeTime takeTime;
+    @ManyToOne
+    @JoinColumn(name = "C_TAKETIME_ID")
+    private TakeTime takeTime;
 
-	@ManyToMany(mappedBy = "couriers")
-	private Set<FixedArea> fixedAreas = new HashSet<FixedArea>();
+    @ManyToMany(mappedBy = "couriers")
+    private Set<FixedArea> fixedAreas = new HashSet<FixedArea>();
 
-	public Integer getId() {
-		return id;
-	}
+    public String getInfo() {
+        return name + "(" + company + ")";
+    }
 
-	public void setId(Integer id) {
-		this.id = id;
-	}
+    public Integer getId() {
+        return id;
+    }
 
-	public String getCourierNum() {
-		return courierNum;
-	}
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
-	public void setCourierNum(String courierNum) {
-		this.courierNum = courierNum;
-	}
+    public String getCourierNum() {
+        return courierNum;
+    }
 
-	public String getName() {
-		return name;
-	}
+    public void setCourierNum(String courierNum) {
+        this.courierNum = courierNum;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public String getTelephone() {
-		return telephone;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	public void setTelephone(String telephone) {
-		this.telephone = telephone;
-	}
+    public String getTelephone() {
+        return telephone;
+    }
 
-	public Character getDeltag() {
-		return deltag;
-	}
+    public void setTelephone(String telephone) {
+        this.telephone = telephone;
+    }
 
-	public void setDeltag(Character deltag) {
-		this.deltag = deltag;
-	}
+    public Character getDeltag() {
+        return deltag;
+    }
 
-	public String getCheckPwd() {
-		return checkPwd;
-	}
+    public void setDeltag(Character deltag) {
+        this.deltag = deltag;
+    }
 
-	public void setCheckPwd(String checkPwd) {
-		this.checkPwd = checkPwd;
-	}
+    public String getCheckPwd() {
+        return checkPwd;
+    }
 
-	public String getType() {
-		return type;
-	}
+    public void setCheckPwd(String checkPwd) {
+        this.checkPwd = checkPwd;
+    }
 
-	public void setType(String type) {
-		this.type = type;
-	}
+    public String getType() {
+        return type;
+    }
 
-	public String getCompany() {
-		return company;
-	}
+    public void setType(String type) {
+        this.type = type;
+    }
 
-	public void setCompany(String company) {
-		this.company = company;
-	}
+    public String getCompany() {
+        return company;
+    }
 
-	public String getVehicleType() {
-		return vehicleType;
-	}
+    public void setCompany(String company) {
+        this.company = company;
+    }
 
-	public void setVehicleType(String vehicleType) {
-		this.vehicleType = vehicleType;
-	}
+    public String getVehicleType() {
+        return vehicleType;
+    }
 
-	public String getVehicleNum() {
-		return vehicleNum;
-	}
+    public void setVehicleType(String vehicleType) {
+        this.vehicleType = vehicleType;
+    }
 
-	public void setVehicleNum(String vehicleNum) {
-		this.vehicleNum = vehicleNum;
-	}
+    public String getVehicleNum() {
+        return vehicleNum;
+    }
 
-	@JSON(serialize = false)
-	public Set<FixedArea> getFixedAreas() {
-		return fixedAreas;
-	}
+    public void setVehicleNum(String vehicleNum) {
+        this.vehicleNum = vehicleNum;
+    }
 
-	public void setFixedAreas(Set<FixedArea> fixedAreas) {
-		this.fixedAreas = fixedAreas;
-	}
+    @JSON(serialize = false)
+    public Set<FixedArea> getFixedAreas() {
+        return fixedAreas;
+    }
 
-	public TakeTime getTakeTime() {
-		return takeTime;
-	}
+    public void setFixedAreas(Set<FixedArea> fixedAreas) {
+        this.fixedAreas = fixedAreas;
+    }
 
-	public void setTakeTime(TakeTime takeTime) {
-		this.takeTime = takeTime;
-	}
+    public TakeTime getTakeTime() {
+        return takeTime;
+    }
 
-	public String getPda() {
-		return pda;
-	}
+    public void setTakeTime(TakeTime takeTime) {
+        this.takeTime = takeTime;
+    }
 
-	public void setPda(String pda) {
-		this.pda = pda;
-	}
+    public String getPda() {
+        return pda;
+    }
 
-	public Standard getStandard() {
-		return standard;
-	}
+    public void setPda(String pda) {
+        this.pda = pda;
+    }
 
-	public void setStandard(Standard standard) {
-		this.standard = standard;
-	}
+    public Standard getStandard() {
+        return standard;
+    }
+
+    public void setStandard(Standard standard) {
+        this.standard = standard;
+    }
 }

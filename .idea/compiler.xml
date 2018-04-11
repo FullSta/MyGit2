@@ -9,6 +9,8 @@
         <module name="bos_management" />
         <module name="crm_domain" />
         <module name="crm_management" />
+        <module name="cxf_rs_spring" />
+        <module name="cxf_ws_spring" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -16,6 +18,8 @@
       <module name="common_parent" target="1.5" />
       <module name="crm_domain" target="1.7" />
       <module name="crm_management" target="1.7" />
+      <module name="cxf_rs_spring" target="1.5" />
+      <module name="cxf_ws_spring" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>
