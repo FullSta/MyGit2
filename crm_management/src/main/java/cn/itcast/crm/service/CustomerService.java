@@ -12,6 +12,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 
 import cn.itcast.crm.domain.Customer;
+import jdk.nashorn.internal.objects.annotations.Getter;
 
 /**
  * 客户操作
@@ -40,5 +41,23 @@ public interface CustomerService {
 	public void associationCustomersToFixedArea(
             @QueryParam("customerIdStr") String customerIdStr,
             @QueryParam("fixedAreaId") String fixedAreaId);
+
+
+	// 保存用户
+	@Path("/customer")
+	@POST
+	@Produces({ "application/xml", "application/json" })
+	public void regist(Customer customer);
+
+	// 根据电话号码找到用户
+	@Path("/customer/telephone/{telephone}")
+	@GET
+	@Consumes({"application/xml","application/json"})
+	public Customer findByTelephone(@PathParam("telephone") String telephone);
+
+	//
+	@Path("/customer/updatetype/{telephone}")
+	@GET
+	public void updateType(@PathParam("telephone") String telephone);
 
 }

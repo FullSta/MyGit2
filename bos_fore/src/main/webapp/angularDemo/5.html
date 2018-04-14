@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>双向数据绑定</title>
+    <script type="text/javascript" src="../js/angular.min.js"></script>
+    <script type="text/javascript" src="../js/angular-route.min.js"></script>
+</head>
+<body ng-app>
+    <div>
+        <h1>head</h1>
+        <a href="#/JavaEE">javaEE</a>
+        <a href="#/ios">ios</a>
+        <a href="#/androd">androd</a>
+    </div>
+<!--路由加载后,更新变化的部分-->
+    <div ng-view>
+
+    </div>
+
+
+    <div>
+        <h1>footer</h1>
+    </div>
+
+    <script type="text/javascript">
+        // 定义map模块
+        var myapp = angular.module("myapp",["ngRoute"]);
+        // 配置模块的路由
+        myapp.config(["$routeProvider",function($routeProvider){
+            $routeProvider
+                .when('/JavaEE',{
+                    templateUrl:'5_1.html'
+                }).when('/ios',{
+                    templateUrl:'5_2.html'
+                }).when('/androd',{
+                    templateUrl:'5_3.html'
+                }).otherwise({
+                    redirectTo: '/JavaEE'
+                });
+        }]);
+
+
+    </script>
+</body>
+</html>
