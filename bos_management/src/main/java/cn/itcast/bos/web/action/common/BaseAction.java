@@ -13,6 +13,7 @@ import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.Map;
 
+@SuppressWarnings("all")
 public abstract class BaseAction<T> extends ActionSupport implements ModelDriven<T> {
     // 模型驱动
     protected T model;

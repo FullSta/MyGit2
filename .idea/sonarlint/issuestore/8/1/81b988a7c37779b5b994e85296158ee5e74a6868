@@ -1,0 +1,19 @@
+
+ijavascript:S3403"JRemove this "!==" check; it will always be true. Did you mean to use "!="?(’ü¯Ýùÿÿÿÿ
+kjavascript:S2589"LRefactor this code so that this expression does not always evaluate to true.(—¹ùÿÿÿÿ
+fjavascript:S2589"LRefactor this code so that this expression does not always evaluate to true.(Ÿ¿Ã½
+kjavascript:S2589"LRefactor this code so that this expression does not always evaluate to true.(’ü¯Ýùÿÿÿÿ
+ijavascript:S3523"OReview this "Function" call and make sure its arguments are properly validated.(ÉšéŸ
+Hjavascript:EmptyBlock")Either remove or fill this block of code.(Ô‰íÌ
+Gjavascript:EmptyBlock")Either remove or fill this block of code.(ô÷‹`
+Njavascript:S1656"/Remove or correct this useless self-assignment.(…ÍÏðýÿÿÿÿ
+Vjavascript:S1854"7Remove this useless assignment to local variable "name"(ÅàÉ¿ýÿÿÿÿ
+Pjavascript:S1854"6Remove this useless assignment to local variable "div"(„”È¦
+Xjavascript:S1854"?Remove this useless assignment to local variable "destElements"(ö’Ðy
+Wjavascript:S1854">Remove this useless assignment to local variable "srcElements"(ö’Ðy
+Pjavascript:S1854"7Remove this useless assignment to local variable "node"(ö’Ðy
+Pjavascript:S1854"6Remove this useless assignment to local variable "tmp"(ú«”è
+Ujavascript:S1854";Remove this useless assignment to local variable "fragment"(•²ßÖ
+Rjavascript:S1854"8Remove this useless assignment to local variable "first"(•²ßÖ
+Jjavascript:S1264"+Replace this "for" loop with a "while" loop(ÒöÁþøÿÿÿÿ
+Ejavascript:S1264"+Replace this "for" loop with a "while" loop(ïž¾Ü

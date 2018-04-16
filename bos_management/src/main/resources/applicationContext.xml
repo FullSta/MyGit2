@@ -13,64 +13,21 @@
 		http://www.springframework.org/schema/data/jpa
 		http://www.springframework.org/schema/data/jpa/spring-jpa.xsd ">
 
-	<!-- 扫描 @Server @Controller @Repository -->
-	<context:component-scan base-package="cn.itcast"/>
-
-	<!-- 加载properties文件 -->
+	<!--scan @server @controller @repository-->
+	<context:component-scan base-package="cn.itcast" />
+	
+	<!--load properties file-->
 	<context:property-placeholder location="classpath:config.properties" />
 
-	<!-- 数据库连接池 -->
-	<bean id="datasource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
-		<property name="driverClass" value="${jdbc.driver}"/>
-		<property name="jdbcUrl" value="${jdbc.url}"/>
-		<property name="user" value="${jdbc.user}"/>
-		<property name="password" value="${jdbc.password}"/>
-	</bean>
-	<!-- 整合jpa配置 -->
-	<bean id="entityManagerFactory"
-		  class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
-		<property name="dataSource" ref="datasource"/>
-		<property name="packagesToScan" value="cn.itcast.bos.domain"/>
-		<property name="persistenceProvider">
-			<bean class="org.hibernate.jpa.HibernatePersistenceProvider"/>
-		</property>
-		<property name="jpaVendorAdapter">
-			<bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
-				<property name="generateDdl" value="true" />
-				<property name="database" value="ORACLE" />
-				<!--设置数据库为oracle方言-->
-				<property name="databasePlatform"
-						  value="org.hibernate.dialect.Oracle10gDialect" />
-				<property name="showSql" value="true" />
-			</bean>
-		</property>
-		<!--jpa方言-->
-		<property name="jpaDialect">
-			<bean class="org.springframework.orm.jpa.vendor.HibernateJpaDialect" />
-		</property>
-		<property name="jpaPropertyMap">
-			<map>
-				<entry key="hibernate.query.substitutions" value="ture 1,false 0" />
-				<entry key="hibernate.default_batch_fetch_size" value="16" />
-				<entry key="hibernate.max_fetch_depth" value="2" />
-				<entry key="hibernate.generate_statistics" value="true" />
-				<entry key="hibernate.bytecode.use_reflection_optimizer" value="true" />
-				<entry key="hibernate.cache.use_second_level_cache" value="false" />
-				<entry key="hibernate.cache.user_query_cache" value="false" />
-			</map>
-		</property>
-	</bean>
+	<!--introducing webservice configure-->
+	<import resource="applicationContext_webService.xml" />
 
-	<!-- jpa事务管理 -->
-	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
-		<property name="entityManagerFactory" ref="entityManagerFactory" />
-	</bean>
+	<!--introduce mq configre-->
+	<import resource="applicationContext_mq.xml" />
 
-	<!-- 注解管理事务 -->
-	<tx:annotation-driven transaction-manager="transactionManager" />
+	<!--introduce external data files-->
+	<import resource="applicationContext_dataSource.xml" />
 
-	<!-- 整合spring data jpa -->
-	<jpa:repositories base-package="cn.itcast.bos.dao" />
-
-
+	<!--introduce quartz configure-->
+	<import resource="applicationContext_quartz.xml" />
 </beans>

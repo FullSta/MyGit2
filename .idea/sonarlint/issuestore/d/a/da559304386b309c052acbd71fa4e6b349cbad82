@@ -1,12 +1,12 @@
 
 qsquid:UselessImportCheck"ORemove this unused import 'org.springframework.beans.factory.annotation.Value'.(ìø›
-Gsquid:S1948"2Make "fixedAreaService" transient or serializable.(úÍÔ
 R
-squid:S106"9Replace this use of System.out or System.err by a logger.(áÖßûÿÿÿÿ
-\squid:UselessImportCheck";Remove this unused import 'cn.itcast.bos.domain.base.Area'.(ñß«&
-esquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(îŸª¨øÿÿÿÿ
-msquid:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(ıí„~
+squid:S106"9Replace this use of System.out or System.err by a logger.(×é×¶ùÿÿÿÿ
 R
 squid:S106"9Replace this use of System.out or System.err by a logger.(Ş¶åûûÿÿÿÿ
 R
-squid:S106"9Replace this use of System.out or System.err by a logger.(×é×¶ùÿÿÿÿ
+squid:S106"9Replace this use of System.out or System.err by a logger.(áÖßûÿÿÿÿ
+msquid:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(ıí„~
+Gsquid:S1948"2Make "fixedAreaService" transient or serializable.(úÍÔ
+esquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(îŸª¨øÿÿÿÿ
+\squid:UselessImportCheck";Remove this unused import 'cn.itcast.bos.domain.base.Area'.(ñß«&

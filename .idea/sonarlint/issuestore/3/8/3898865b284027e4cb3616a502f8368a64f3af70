@@ -1,0 +1,7 @@
+
+Dsquid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ìëî«,
+Jsquid:S1444"/Make this "public static activeUrl" field final(Œ¥‡8ìëî«,
+csquid:S00112"FDefine and throw a dedicated exception instead of using a generic one.(÷Ö®8ìëî«,
+‡"squid:ClassVariableVisibilityCheck"UMake activeUrl a static final constant or non-public and provide accessors if needed.(Œ¥‡8ìëî«,
+usquid:S3008"TRename this field "smtp_host" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(•‰ƒÀüÿÿÿÿ8ìëî«,
+qsquid:S2068"U'password' detected in this expression, review this potentially hardcoded credential.(Å™ê§8ìëî«,

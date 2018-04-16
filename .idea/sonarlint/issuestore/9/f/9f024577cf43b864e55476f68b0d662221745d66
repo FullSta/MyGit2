@@ -1,10 +1,10 @@
 
+ysquid:S1149"_Replace the synchronized class "StringBuffer" by an unsynchronized one such as "StringBuilder".(¨âàøÿÿÿÿ
+_squid:S2095"JUse try-with-resources or close this "HSSFWorkbook" in a "finally" clause.(¢ü¢ÿ
+\squid:S00112"FDefine and throw a dedicated exception instead of using a generic one.(ÿîÀï
+msquid:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(ıí„~
+Bsquid:S1948"-Make "areaService" transient or serializable.(ÕòŞ£
 r
 squid:S135"YReduce the total number of break and continue statements in this loop to use at most one.(ËØáùûÿÿÿÿ
-`squid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ÂÿÊ
-msquid:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(ıí„~
-\squid:S00112"FDefine and throw a dedicated exception instead of using a generic one.(ÿîÀï
-Bsquid:S1948"-Make "areaService" transient or serializable.(ÕòŞ£
-_squid:S2095"JUse try-with-resources or close this "HSSFWorkbook" in a "finally" clause.(¢ü¢ÿ
-ysquid:S1149"_Replace the synchronized class "StringBuffer" by an unsynchronized one such as "StringBuilder".(¨âàøÿÿÿÿ
 msquid:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(æÏÁ(
+`squid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ÂÿÊ

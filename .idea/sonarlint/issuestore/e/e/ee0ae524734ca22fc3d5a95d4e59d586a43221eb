@@ -1,0 +1,22 @@
+
+΅%squid:RedundantThrowsDeclarationCheck"lRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from method's body.(ί¦	8υσ¥Λ¬,
+¶%squid:RedundantThrowsDeclarationCheck"€Remove the declaration of thrown exception 'com.aliyuncs.exceptions.ClientException', as it cannot be thrown from method's body.(ί¦	8υσ¥Λ¬,
+‰squid:S1192"nDefine a constant instead of duplicating this literal "http://localhost:9002/crm_management/services" 3 times.(»p8υσ¥Λ¬,
+Isquid:S1068".Remove this unused "activecode" private field.(¤έ«h8υσ¥Λ¬,
+tsquid:S1450"YRemove the "activecode" field and declare it as a local variable in the relevant methods.(¤έ«h8υσ¥Λ¬,
+gsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ϊΊφΛ8υσ¥Λ¬,
+gsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(‘ΡΎο8υσ¥Λ¬,
+gsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(οΑΤτ8υσ¥Λ¬,
+lsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(πΜÿΪÿÿÿÿÿ8υσ¥Λ¬,
+Y
+squid:S106"9Replace this use of System.out or System.err by a logger.(βΒΫσωÿÿÿÿ8υσ¥Λ¬,
+Y
+squid:S106"9Replace this use of System.out or System.err by a logger.(®―Πύÿÿÿÿ8υσ¥Λ¬,
+Y
+squid:S106"9Replace this use of System.out or System.err by a logger.(γοδύÿÿÿÿ8υσ¥Λ¬,
+Y
+squid:S106"9Replace this use of System.out or System.err by a logger.(¬›ΎΆϊÿÿÿÿ8υσ¥Λ¬,
+ksquid:HiddenFieldCheck"?Rename "activecode" which hides the field declared at line 117.(Ϋ»Άÿÿÿÿÿ8υσ¥Λ¬,
+Ysquid:S2589"8Remove this expression which always evaluates to "false"(σό—―ψÿÿÿÿ8υσ¥Λ¬,
+Isquid:S1948"-Make "jmsTemplate" transient or serializable.(”±ϋ—8υσ¥Λ¬,
+Psquid:S1948"/Make "redisTemplate" transient or serializable.(ΰ‹΄±ψÿÿÿÿ8υσ¥Λ¬,

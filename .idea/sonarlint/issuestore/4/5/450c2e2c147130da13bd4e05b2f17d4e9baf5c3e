@@ -1,0 +1,19 @@
+
+Y
+squid:S106"9Replace this use of System.out or System.err by a logger.(Òú€­úÿÿÿÿ8…Ž¹‘¬,
+gsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(»äõ÷8…Ž¹‘¬,
+gsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(£õî”8…Ž¹‘¬,
+S
+squid:S106"9Replace this use of System.out or System.err by a logger.(û·‹8…Ž¹‘¬,
+T
+squid:S106"9Replace this use of System.out or System.err by a logger.(í’ØÍ8…Ž¹‘¬,
+T
+squid:S106"9Replace this use of System.out or System.err by a logger.(°ƒœ8…Ž¹‘¬,
+ƒsquid:S1488"gImmediately return this expression instead of assigning it to the temporary variable "sendSmsResponse".(’Œù¶8…Ž¹‘¬,
+wsquid:S00115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(ºÂöò8…Ž¹‘¬,
+msquid:S1192"LDefine a constant instead of duplicating this literal "cn-hangzhou" 3 times.(À†Ãùÿÿÿÿ8…Ž¹‘¬,
+Y
+squid:S106"9Replace this use of System.out or System.err by a logger.(ñÔ´²ÿÿÿÿÿ8…Ž¹‘¬,
+|squid:S00115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(áòëøþÿÿÿÿ8…Ž¹‘¬,
+|squid:S00115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(ä¶ö®øÿÿÿÿ8…Ž¹‘¬,
+|squid:S00115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(ñš·³þÿÿÿÿ8…Ž¹‘¬,
