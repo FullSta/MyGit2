@@ -23,6 +23,8 @@
         <option value="$PROJECT_DIR$/bos_sms/pom.xml" />
         <option value="$PROJECT_DIR$/bos_domain/pom.xml" />
         <option value="$PROJECT_DIR$/quartz/pom.xml" />
+        <option value="$PROJECT_DIR$/elasticsearch_helloworld/pom.xml" />
+        <option value="$PROJECT_DIR$/es_spring/pom.xml" />
       </list>
     </option>
   </component>

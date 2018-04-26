@@ -18,7 +18,11 @@
 			$(function(){
 				// 点击保存
 				$('#save').click(function(){
-					location.href='menu.html';
+                    if ($("#functionForm").form('validate')){
+                        $("#functionForm").submit();
+                    } else{
+                        $.messager.alert("警告","表单中还存在一些非法字符！","warning");
+                    }
 				});
 			});
 		</script>
@@ -31,7 +35,7 @@
 			</div>
 		</div>
 		<div data-options="region:'center'">
-			<form id="functionForm" method="post">
+			<form id="functionForm" action="../../menu_save.action" method="post">
 				<table class="table-edit" width="80%" align="center">
 					<tr class="title">
 						<td colspan="2">菜单项信息</td>

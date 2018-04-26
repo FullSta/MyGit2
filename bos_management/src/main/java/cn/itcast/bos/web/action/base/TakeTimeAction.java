@@ -2,6 +2,7 @@ package cn.itcast.bos.web.action.base;
 
 import cn.itcast.bos.domain.base.TakeTime;
 import cn.itcast.bos.service.base.TakeTimeService;
+import cn.itcast.bos.web.action.common.BaseAction;
 import com.opensymphony.xwork2.ActionContext;
 import org.apache.struts2.convention.annotation.Action;
 import org.apache.struts2.convention.annotation.Namespace;
@@ -13,13 +14,12 @@ import org.springframework.stereotype.Controller;
 
 import java.util.List;
 
-import static com.opensymphony.xwork2.Action.SUCCESS;
-
 @ParentPackage("json-default")
 @Namespace("/")
 @Scope("prototype")
 @Controller
-public class TakeTimeAction {
+public class TakeTimeAction extends BaseAction<TakeTime> {
+
     @Autowired
     private TakeTimeService takeTimeService;
 
@@ -29,4 +29,13 @@ public class TakeTimeAction {
         ActionContext.getContext().getValueStack().push(list);
         return SUCCESS;
     }
+
+    @Action(value = "taketime_save",results = {@Result(name = "success",type = "redirect",location = "./pages/base/take_time.html")})
+    public String save(){
+        System.out.println("web层正在执行保存操作...");
+        takeTimeService.save(model);
+
+        return SUCCESS;
+    }
+
 }

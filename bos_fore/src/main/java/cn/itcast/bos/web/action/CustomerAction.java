@@ -1,6 +1,7 @@
 package cn.itcast.bos.web.action;
 
 import cn.itcast.bos.common.BaseAction;
+import cn.itcast.bos.constant.Constants;
 import cn.itcast.bos.utils.MailUtils;
 import cn.itcast.crm.domain.Customer;
 import com.aliyuncs.exceptions.ClientException;
@@ -151,4 +152,26 @@ public class CustomerAction extends BaseAction<Customer> {
         }
         return NONE;
     }
+
+    // login module
+    @Action(value = "customer_login",results = {@Result(name = "login",type = "redirect",location = "login.html")
+            ,@Result(name = "success",type = "redirect",location = "index.html#/myhome")})
+    public String login(){
+        // System.out.println("这里是fore的controller层  收到的password:"+model.getPassword());
+        Customer customer = WebClient.create(Constants.CRM_MANAGEMENT_URL
+                +"/services/customerService/customer/login?telephone="
+                +model.getTelephone()+"&password="
+                +model.getPassword()).accept(MediaType.APPLICATION_JSON).get(Customer.class);
+        if (customer == null){
+            // loging failed
+            return LOGIN;
+        }else {
+            // success
+            ServletActionContext.getRequest().getSession().setAttribute("customer",customer);
+            return SUCCESS;
+        }
+
+    }
+
+
 }

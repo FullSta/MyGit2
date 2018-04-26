@@ -18,8 +18,16 @@ import org.apache.struts2.convention.annotation.ParentPackage;
 import org.apache.struts2.convention.annotation.Result;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Controller;
 
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Predicate;
+import javax.persistence.criteria.Root;
 import java.io.File;
 import java.io.FileInputStream;
 import java.util.ArrayList;
@@ -61,9 +69,11 @@ public class SubAreaAction extends BaseAction<SubArea> {
         // 编写解析代码逻辑
         // 基于.xls格式解析HSSF
         // 1.加载excel文件对象
-        HSSFWorkbook hssfWorkbook = new HSSFWorkbook(new FileInputStream(file));
-        // 2.读取一个sheet
-        HSSFSheet sheet = hssfWorkbook.getSheetAt(0);
+        HSSFSheet sheet;
+        try (HSSFWorkbook hssfWorkbook = new HSSFWorkbook(new FileInputStream(file))) {
+            // 2.读取一个sheet
+            sheet = hssfWorkbook.getSheetAt(0);
+        }
         // 2.读取sheet的每一行
         for (Row row : sheet) {
             // 一行数据 对应 一个区域的对象
@@ -105,4 +115,65 @@ public class SubAreaAction extends BaseAction<SubArea> {
 
         return NONE;
     }
+
+    @Action(value = "subArea_pageQuery",results = {@Result(name = "success",type = "json")})
+    public String pageQuery(){
+        System.out.println("fenyw cahxun");
+        // 构造分页查询对象
+        Pageable pageable = new PageRequest(page - 1, rows);
+        // 构造条件查询条件
+        Specification<SubArea> specification = new Specification<SubArea>() {
+            @Override
+            public Predicate toPredicate(Root<SubArea> root, CriteriaQuery<?> query, CriteriaBuilder cb) {
+                List<Predicate> list = new ArrayList<Predicate>();
+                // 查询条件
+                if (model.getArea() != null){
+                    if (StringUtils.isNotBlank(model.getArea().getProvince())){
+                        Predicate p1 = cb.like(root.get("province")
+                                .as(String.class),"%"+model.getArea().getProvince()+"%");
+                        list.add(p1);
+                    }
+                    if (StringUtils.isNotBlank(model.getArea().getCity())){
+                        Predicate p2 = cb.like(root.get("city")
+                                .as(String.class),"%"+model.getArea().getCity()+"%");
+                        list.add(p2);
+                    }
+                    if (StringUtils.isNotBlank(model.getArea().getDistrict())){
+                        Predicate p3 = cb.like(root.get("district")
+                                .as(String.class),"%"+model.getArea().getDistrict()+"%");
+                        list.add(p3);
+                    }
+                }
+                if (model.getFixedArea() != null){
+                    if (StringUtils.isNotBlank(model.getFixedArea().getFixedAreaName())){
+                        Predicate p4 = cb.like(root.get("district")
+                                .as(String.class),"%"+model.getFixedArea().getFixedAreaName()+"%");
+                        list.add(p4);
+                    }
+                }
+                if (StringUtils.isNotBlank(model.getKeyWords())){
+                    Predicate p5 = cb.like(root.get("district")
+                            .as(String.class),"%"+model.getKeyWords()+"%");
+                    list.add(p5);
+                }
+
+                return cb.and(list.toArray(new Predicate[0]));
+
+            }
+        };
+        // 调用业务层完成查询
+        Page<SubArea> pageData = subAreaService.findPageData(specification,pageable);
+        // 压入值栈,,调用baseAction定义的方法
+        pushPageDataToValueStack(pageData);
+        return SUCCESS;
+    }
+
+    @Action(value = "subarea_save",results = {@Result(name = "success",type = "redirect",location = "./pages/base/sub_area.html")})
+    public String save(){
+        subAreaService.save(model);
+
+        return SUCCESS;
+    }
+
+
 }

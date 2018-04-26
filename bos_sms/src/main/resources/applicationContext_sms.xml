@@ -56,6 +56,12 @@
         <jms:listener destination="bos_sms" ref="smsConsumer"/>
     </jms:listener-container>
 
+    <jms:listener-container destination-type="queue" container-type="default"
+                            connection-factory="connectionFactory" acknowledge="auto">
+        <!-- 默认注册bean名称，应该是类名首字母小写  -->
+        <jms:listener destination="IGM" ref="smsConsumer2"/>
+    </jms:listener-container>
+
     <!-- 定义Topic监听器 -->
     <!--     <jms:listener-container destination-type="topic" container-type="default"  -->
     <!--     	connection-factory="connectionFactory" acknowledge="auto"> -->

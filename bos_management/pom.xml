@@ -48,11 +48,11 @@
                 </configuration>
             </plugin>
         </plugins>
+
     </build>
 
   <artifactId>bos_management</artifactId>
   <packaging>war</packaging>
   <name>bos_management</name>
   <description>核心业务管理平台</description>
-  
 </project>

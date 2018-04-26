@@ -8,6 +8,7 @@ import cn.itcast.crm.domain.Customer;
 import com.opensymphony.xwork2.ActionContext;
 import org.apache.commons.lang.StringUtils;
 import org.apache.cxf.jaxrs.client.WebClient;
+import org.apache.struts2.ServletActionContext;
 import org.apache.struts2.convention.annotation.Action;
 import org.apache.struts2.convention.annotation.Namespace;
 import org.apache.struts2.convention.annotation.ParentPackage;
@@ -147,4 +148,14 @@ public class FixedAreaAction extends BaseAction<FixedArea> {
         return SUCCESS;
 
     }
+
+    @Action(value = "fixedArea_findAll",results = {@Result(name = "success",type = "json")})
+    public String findAll(){
+        List<FixedArea> fixedAreas = fixedAreaService.findAll();
+
+        ServletActionContext.getContext().getValueStack().push(fixedAreas);
+
+        return SUCCESS;
+    }
+
 }

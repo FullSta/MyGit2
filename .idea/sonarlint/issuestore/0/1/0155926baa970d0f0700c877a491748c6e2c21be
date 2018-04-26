@@ -1,10 +1,0 @@
-
-fsquid:S3027"JPut single-quotes around '.' to use the faster "lastIndexOf(char)" method.(ÙŸÒÀ8Þ²¾É¬,
-T
-squid:S106"9Replace this use of System.out or System.err by a logger.(´«ÃÄ8Þ²¾É¬,
-T
-squid:S106"9Replace this use of System.out or System.err by a logger.(þóÆâ8Þ²¾É¬,
-Hsquid:S1481",Remove this unused "saveUrl" local variable.(þåž¦8Þ²¾É¬,
-Wsquid:S1854";Remove this useless assignment to local variable "saveUrl".(þåž¦8Þ²¾É¬,
-Ysquid:UselessImportCheck"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8Þ²¾É¬,
-Ssquid:S1948"2Make "promotionService" transient or serializable.(Û¦žºùÿÿÿÿ8Þ²¾É¬,

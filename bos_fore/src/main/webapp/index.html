@@ -4,8 +4,10 @@
 	<head>
 		<meta content="application/xhtml+xml;charset=UTF-8" http-equiv="Content-Type">
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-		<title>速运快递</title>
+		<title>IGM校园物流</title>
 
+		<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 		<link rel="stylesheet" type="text/css" href="css/styleindex.css">
 		<link rel="stylesheet" type="text/css" href="css/public.css">
 		<link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap.css">
@@ -16,7 +18,8 @@
 		<script src="js/self/effect.js" type="text/javascript"></script>
 		<script type="text/javascript" src="js/angular.min.js"></script>
 		<script type="text/javascript" src="js/angular-route.min.js"></script>
-		
+		<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=5hrQ0l4khWvh0I7didak5PG3fxMgvNWW"></script>
+
 		<!--[if IE]>
     <script src="js/html5.js"  type="text/javascript"></script>
     <script src="js/respond.min.js"  type="text/javascript"></script>
@@ -129,21 +132,21 @@
 									<li>联系方式
 										<ul class="list-unstyled inner">
 											<li>客服热线</li>
-											<li><span class="tel">400-618-4000</span></li>
+											<li><span class="tel">023-618-2322</span></li>
 											<li>在线客服</li>
 											<li><span class="bigtel">进入在线客服</span></li>
 
 										</ul>
 									</li>
 								</ul>
-								<div class="saoma"><img src="images/icon/suyun/erweima.png"></div>
+								<div class="saoma"><img style="width: 100px;height: 100px;" src="images/icon/suyun/erweima.png"></div>
 							</div>
 						</div>
 					</section>
 					<section class="copyright">
 						<div class="container">
-							<p>地址：北京市昌平区建材城西路金燕龙办公楼一层 邮编：100096 电话：400-618-4000 传真：010-82935100</p>
-							<p>京ICP备08001421号京公网安备110108007702</p>
+							<p>地址：海南省三亚市海南热带海洋学院1C313 邮编：572000 电话：023-618-2322 传真：010-83935111</p>
+							<p>京ICP备08001233号京公网安备110100007707</p>
 						</div>
 					</section>
 				</footer>
@@ -175,11 +178,11 @@
 					redirectTo: '/'
 				})
 			}]);
-			
-			// 账户管理 控制器 
+
+			// 账户管理 控制器
 			bosfore_app.controller("userInfoCtrl",["$scope",function($scope){
 			}]);
-			
+
 			// 在线下单控制器
 			bosfore_app.controller("orderCtrl",["$scope",function($scope){
 			}]);

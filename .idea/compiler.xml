@@ -12,6 +12,8 @@
         <module name="bos_sms" />
         <module name="crm_domain" />
         <module name="crm_management" />
+        <module name="elasticsearch_helloworld" />
+        <module name="es_spring" />
         <module name="quartz" />
       </profile>
     </annotationProcessing>
@@ -23,6 +25,8 @@
       <module name="common_parent" target="1.5" />
       <module name="crm_domain" target="1.7" />
       <module name="crm_management" target="1.7" />
+      <module name="elasticsearch_helloworld" target="1.7" />
+      <module name="es_spring" target="1.7" />
       <module name="quartz" target="1.5" />
     </bytecodeTargetLevel>
   </component>

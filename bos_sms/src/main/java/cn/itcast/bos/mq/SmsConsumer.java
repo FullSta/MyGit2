@@ -17,15 +17,16 @@ public class SmsConsumer implements MessageListener {
     public void onMessage(Message message) {
         MapMessage mapMessage = (MapMessage)message;
         // 调用sms服务发送短信
-        SendSmsResponse responce;
+        SendSmsResponse response;
         try {
-            responce = SmsUtils.sendSms(mapMessage.getString("telephone"),
+            response = SmsUtils.sendSms(mapMessage.getString("telephone"),
                     mapMessage.getString("checkcode"));
-            if(responce.getCode().equals("OK")){
+
+            if(response.getCode().equals("OK")){
                 // 发送成功
             }else {
                 // 发送失败
-                throw new RuntimeException("短信发送失败,信息码:"+responce.getCode());
+                throw new RuntimeException("短信发送失败,信息码:"+response.getCode());
             }
             System.out.println(mapMessage.getString("telephone")+mapMessage.getString("checkcode")) ;
         } catch (Exception e) {

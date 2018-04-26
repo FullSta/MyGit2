@@ -16,4 +16,6 @@ public interface CourierService {
 
     // 查询没有分区的快递员
     public List<Courier> findnoassociation();
+
+    public Courier findOne(Integer id);
 }

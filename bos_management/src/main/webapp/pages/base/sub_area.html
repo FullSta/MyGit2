@@ -182,10 +182,11 @@
 					pageList: [30,50,100],
 					pagination : true,
 					toolbar : toolbar,
-					url : "../../subArea_findAll.action",
+					url : "../../subArea_pageQuery.action",
 					idField : 'id',
 					columns : columns,
 					onDblClickRow : doDblClickRow
+
 				});
 				
 				// 添加、修改分区
@@ -211,7 +212,15 @@
 			    });
 				$("#btn").click(function(){
 					alert("执行查询...");
-				});
+				})
+
+				$("#save").click(function () {
+                    if ($("#subAreaForm").form('validate')){
+                        $("#subAreaForm").submit();
+                    } else{
+                        $.messager.alert("警告","表单中还存在一些非法字符！","warning");
+                    }
+                });
 				
 			});
 		
@@ -234,7 +243,7 @@
 			</div>
 
 			<div style="overflow:auto;padding:5px;" border="false">
-				<form>
+				<form id="subAreaForm" name="subAreaForm" action="../../subarea_save.action" method="post">
 					<table class="table-edit" width="80%" align="center">
 						<tr class="title">
 							<td colspan="2">分区信息</td>
@@ -248,13 +257,17 @@
 						<tr>
 							<td>选择区域</td>
 							<td>
-								<input class="easyui-combobox" name="area.id" data-options="valueField:'id',textField:'name',url:'../../data/area.json'" />
+								<input class="easyui-combobox" name="area.id" type="text"
+									   data-options="valueField:'id',valueField:'id',textField:'id',
+									   		url:'../../area_findAll.action'" />
 							</td>
 						</tr>
 						<tr>
 							<td>选择定区</td>
 							<td>
-								<input class="easyui-combobox" name="fixedArea.id" data-options="valueField:'id',textField:'name',url:'../../fixedArea_pageQuery.action'" />
+								<input class="easyui-combobox" name="fixedArea.id" type="text"
+									   data-options="valueField:'id',valueField:'id',textField:'fixedAreaName',
+									   url:'../../fixedArea_findAll.action'" />
 							</td>
 						</tr>
 						<tr>
@@ -299,6 +312,8 @@
 		<div class="easyui-window" title="查询分区窗口" id="searchWindow" collapsible="false" minimizable="false" maximizable="false" style="top:20px;left:200px">
 			<div style="overflow:auto;padding:5px;" border="false">
 				<form>
+
+
 					<table class="table-edit" width="80%" align="center">
 						<tr class="title">
 							<td colspan="2">查询条件</td>

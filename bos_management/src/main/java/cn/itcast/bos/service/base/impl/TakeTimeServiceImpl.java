@@ -19,4 +19,9 @@ public class TakeTimeServiceImpl implements TakeTimeService {
     public List<TakeTime> findAll() {
         return takeTimeRepository.findAll();
     }
+
+    @Override
+    public void save(TakeTime model) {
+        takeTimeRepository.save(model);
+    }
 }

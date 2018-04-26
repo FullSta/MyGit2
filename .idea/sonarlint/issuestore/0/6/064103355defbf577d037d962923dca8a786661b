@@ -1,7 +1,0 @@
-
-zsquid:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(Ρ·Πξϊÿÿÿÿ8υσ¥Λ¬,
-T
-squid:S106"9Replace this use of System.out or System.err by a logger.(‡σέ§8υσ¥Λ¬,
-Dsquid:S1148"#Use a logger to log this exception.(€ΙΤ…ύÿÿÿÿ8υσ¥Λ¬,
-Dsquid:S1148"#Use a logger to log this exception.(€ΙΤ…ύÿÿÿÿ8υσ¥Λ¬,
-Csquid:S1948"'Make "model" transient or serializable.(™ΞªÒ8υσ¥Λ¬,

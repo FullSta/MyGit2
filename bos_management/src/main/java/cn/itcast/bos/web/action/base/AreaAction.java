@@ -8,6 +8,7 @@ import org.apache.commons.lang.StringUtils;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Row;
+import org.apache.struts2.ServletActionContext;
 import org.apache.struts2.convention.annotation.Action;
 import org.apache.struts2.convention.annotation.Namespace;
 import org.apache.struts2.convention.annotation.ParentPackage;
@@ -53,9 +54,11 @@ public class AreaAction extends BaseAction<Area> {
         // 编写解析代码逻辑
         // 基于.xls格式解析HSSF
         // 1.加载excel文件对象
-        HSSFWorkbook hssfWorkbook = new HSSFWorkbook(new FileInputStream(file));
-        // 2.读取一个sheet
-        HSSFSheet sheet = hssfWorkbook.getSheetAt(0);
+        HSSFSheet sheet;
+        try (HSSFWorkbook hssfWorkbook = new HSSFWorkbook(new FileInputStream(file))) {
+            // 2.读取一个sheet
+            sheet = hssfWorkbook.getSheetAt(0);
+        }
         // 2.读取sheet的每一行
         for (Row row : sheet) {
             // 一行数据 对应 一个区域的对象
@@ -136,6 +139,20 @@ public class AreaAction extends BaseAction<Area> {
         Page<Area> pageData = areaService.findPageData(specification,pageable);
         // 压入值栈,,调用baseAction定义的方法
         pushPageDataToValueStack(pageData);
+        return SUCCESS;
+    }
+    //save
+    @Action(value = "area_save",results = {@Result(name = "success",type = "redirect",location = "./pages/base/area.html")})
+    public String save(){
+        areaService.save(model);
+
+        return SUCCESS;
+    }
+
+    @Action(value = "area_findAll",results = {@Result(name = "success",type = "json")})
+    public String findAll(){
+        List<Area> areas = areaService.findAll();
+        ServletActionContext.getContext().getValueStack().push(areas);
         return SUCCESS;
     }
 

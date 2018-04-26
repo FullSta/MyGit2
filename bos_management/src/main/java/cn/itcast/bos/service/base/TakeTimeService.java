@@ -6,4 +6,6 @@ import java.util.List;
 
 public interface TakeTimeService {
     public List<TakeTime> findAll();
+
+    void save(TakeTime model);
 }

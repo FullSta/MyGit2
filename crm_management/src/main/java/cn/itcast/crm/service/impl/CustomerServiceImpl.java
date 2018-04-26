@@ -63,4 +63,18 @@ public class CustomerServiceImpl implements CustomerService {
 		customerRepository.updateType(telephone);
 	}
 
+	@Override
+	public Customer login(String telephone, String password) {
+		System.out.println("这里是crm_management的serviceImpl   telephone:"+telephone+"  password:"+password);
+		return customerRepository.findByTelephoneAndPassword(telephone,password);
+	}
+
+	@Override
+	public String findFixedAreaIdByAddress(String address) {
+		System.out.println(address);
+		String fixedAreaId =customerRepository.findFixedAreaIdByAddress(address);
+        System.out.println("接收到的数据:"+fixedAreaId);
+		return fixedAreaId;
+	}
+
 }

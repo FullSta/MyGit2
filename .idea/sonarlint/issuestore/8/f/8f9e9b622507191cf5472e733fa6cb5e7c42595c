@@ -1,16 +1,0 @@
-
-gsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(—ú•Ö8Îµ§–«,
-csquid:S00112"FDefine and throw a dedicated exception instead of using a generic one.(ÿîÀï8Îéú•«,
-Y
-squid:S106"9Replace this use of System.out or System.err by a logger.(Õ§îşÿÿÿÿ8¿ßé–«,
-Nsquid:S1948"2Make "fixedAreaService" transient or serializable.(úÍÔ8 Ú«–«,
-lsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ÆŸÓ²şÿÿÿÿ8ÏÚŸ—«,
-Isquid:S1948"-Make "areaService" transient or serializable.(ÕòŞ£8¸¬–«,
-fsquid:S2095"JUse try-with-resources or close this "HSSFWorkbook" in a "finally" clause.(¢ü¢ÿ8şÍù•«,
-usquid:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(ã»Ó×8“Üõüª,
-T
-squid:S106"9Replace this use of System.out or System.err by a logger.(ëÎ‹¨8ÃÛè–«,
-y
-squid:S135"YReduce the total number of break and continue statements in this loop to use at most one.(ËØáùûÿÿÿÿ8“Üõüª,
-lsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(™ÖÌùÿÿÿÿ8ìøŸ—«,
-Qsquid:S1948"0Make "subAreaService" transient or serializable.(ÓÀÑ»øÿÿÿÿ8“Üõüª,

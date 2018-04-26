@@ -60,4 +60,16 @@ public interface CustomerService {
 	@GET
 	public void updateType(@PathParam("telephone") String telephone);
 
+	// 前段登录模块提交过来的,返回一个customer
+	@Path("customer/login")
+	@GET
+	@Consumes({"application/xml","application/json"})
+	public Customer login(@QueryParam("telephone") String telephone,@QueryParam("password") String password);
+
+	// 返回fixedAreaId
+	@Path("/customer/findFixedAreaIdByAddress/{address}")
+	@GET
+	@Consumes({"application/xml","application/json"})
+	public String findFixedAreaIdByAddress(@PathParam("address") String address);
+
 }

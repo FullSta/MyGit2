@@ -10,6 +10,8 @@
       <module fileurl="file://$PROJECT_DIR$/common_parent/common_parent.iml" filepath="$PROJECT_DIR$/common_parent/common_parent.iml" />
       <module fileurl="file://$PROJECT_DIR$/crm_domain/crm_domain.iml" filepath="$PROJECT_DIR$/crm_domain/crm_domain.iml" />
       <module fileurl="file://$PROJECT_DIR$/crm_management/crm_management.iml" filepath="$PROJECT_DIR$/crm_management/crm_management.iml" />
+      <module fileurl="file://$PROJECT_DIR$/elasticsearch_helloworld/elasticsearch_helloworld.iml" filepath="$PROJECT_DIR$/elasticsearch_helloworld/elasticsearch_helloworld.iml" />
+      <module fileurl="file://$PROJECT_DIR$/es_spring/es_spring.iml" filepath="$PROJECT_DIR$/es_spring/es_spring.iml" />
       <module fileurl="file://$PROJECT_DIR$/quartz/quartz.iml" filepath="$PROJECT_DIR$/quartz/quartz.iml" />
     </modules>
   </component>

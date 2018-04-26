@@ -1,10 +1,0 @@
-
-msquid:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(ıí„~
-ssquid:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(Ñ·Ğîúÿÿÿÿ
-M
-squid:S106"9Replace this use of System.out or System.err by a logger.(£Í·Ü
-R
-squid:S106"9Replace this use of System.out or System.err by a logger.(¼Áİ´ÿÿÿÿÿ
-asquid:S1858"G"idArray" is an array of strings, there's no need to call "toString()".(¼Áİ´ÿÿÿÿÿ
-Csquid:S1948")Make "courier" transient or serializable.(²¯¡Æıÿÿÿÿ
-Jsquid:S1948"0Make "courierService" transient or serializable.(¼üşøÿÿÿÿ

@@ -29,5 +29,12 @@
 	<import resource="applicationContext_dataSource.xml" />
 
 	<!--introduce quartz configure-->
-	<import resource="applicationContext_quartz.xml" />
+	<!--do not known name changed cause error-->
+	<import resource="applicationContext_qua.xml" />
+
+	<!--introduce elasticsearch files-->
+	<import resource="applicationContext-elasticSearch.xml" />
+
+	<!--introduce elasticsearch files-->
+	<import resource="applicationContext-shiro.xml" />
 </beans>

@@ -67,7 +67,7 @@ public class StandardAction extends ActionSupport implements
 	// 分页列表查询
 	@Action(value = "standard_pageQuery", results = { @Result(name = "success", type = "json") })
 	public String pageQuery() {
-		System.out.println("正在分页查询标准...");
+//		System.out.println("正在分页查询标准...");
 		// 调用业务层 ，查询数据结果
 		Pageable pageable = new PageRequest(page - 1, rows);
 		Page<Standard> pageData = standardService.findPageData(pageable);

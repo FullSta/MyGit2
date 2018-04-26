@@ -34,5 +34,15 @@ public class AreaServiceImpl implements AreaService {
         return areaRepository.findOne(areaId);
     }
 
+    @Override
+    public void save(Area area) {
+        areaRepository.save(area);
+    }
+
+    @Override
+    public List<Area> findAll() {
+        return areaRepository.findAll();
+    }
+
 
 }

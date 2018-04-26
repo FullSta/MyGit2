@@ -16,4 +16,8 @@ public interface AreaService {
     public Page<Area> findPageData(Specification<Area> specification, Pageable pageable);
 
     Area findOne(String areaId);
+
+    void save(Area area);
+
+    List<Area> findAll();
 }
